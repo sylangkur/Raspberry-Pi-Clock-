@@ -1,0 +1,15 @@
+{
+  "everyday": [
+    {"start": "08:00", "end": "09:00", "label": "🌅 Wake Up & Morning Prep"},
+    {"start": "09:00", "end": "12:00", "label": "📖 Study Block 1"},
+    {"start": "12:00", "end": "12:30", "label": "☕ Short Break"},
+    {"start": "12:30", "end": "14:00", "label": "📖 Study Block 2"},
+    {"start": "14:00", "end": "15:00", "label": "🍽️ Lunch & Rest"},
+    {"start": "15:00", "end": "18:00", "label": "✏️ Exam Practice"},
+    {"start": "18:00", "end": "19:00", "label": "🌇 Evening Break"},
+    {"start": "19:00", "end": "21:30", "label": "📖 Study Block 3"},
+    {"start": "21:30", "end": "22:00", "label": "🌙 Wind Down"},
+    {"start": "22:00", "end": "00:00", "label": "🎮 Free Time / Leisure"},
+    {"start": "00:00", "end": "08:00", "label": "😴 Sleep"}
+  ]
+}

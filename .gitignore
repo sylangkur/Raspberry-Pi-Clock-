@@ -1,0 +1,19 @@
+# Personal / runtime data (created by the portal)
+settings.json
+reminders.json
+routine.json
+background.*
+chime.*
+birthday_chime.*
+fonts/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

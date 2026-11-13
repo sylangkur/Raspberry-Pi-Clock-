@@ -1,0 +1,6 @@
+# Web portal
+Flask>=2.3
+
+# Clock display: PyQt5 is best installed from apt on Raspberry Pi OS:
+#   sudo apt install python3-pyqt5
+# (use `pip install PyQt5` on a PC)

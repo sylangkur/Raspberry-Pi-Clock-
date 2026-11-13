@@ -5,18 +5,18 @@ A full-screen clock/dashboard for a **Raspberry Pi with an 800×480 (5") HDMI di
 ## Features
 
 - Big clock (12/24 h), English date and **Bangla (Bengali) calendar date**
-- **Daily routine** banner showing the current time block (same every day, or per weekday)
+- **Daily routine** banner – shows the current time block (same every day, or per weekday)
 - Countdown to an exam date
-- "Next reminder" line for birthdays, anniversaries and public holidays
+- Smart "next reminder" line – birthdays, anniversaries and public holidays (see `reminders.example.json`)
 - Hourly / half-hourly **chime**, special **birthday chime**, mute, quiet hours and snooze
-- Custom background image, per-element font / size / colour / opacity / alignment, drag-to-reorder layout
-- Everything is edited live from the web portal (the clock reloads every ~30 s)
+- Custom background image, per-element **font / size / colour / opacity / alignment**, drag-to-reorder layout
+- Everything is edited live from the web portal – no restart needed (the clock reloads every ~30 s)
 
 ## Requirements
 
-- Raspberry Pi with an X11 session, Python 3.9+
+- Raspberry Pi (tested idea: Pi 4/5, 8 GB) with an X11 session, Python 3.9+
 - `python3-pyqt5` (display), `Flask` (portal)
-- `paplay` (from `pulseaudio-utils`) for chimes; works with PipeWire-pulse
+- `paplay` (from `pulseaudio-utils`) for chimes – works with PipeWire-pulse
 
 ## Install (on the Pi)
 
@@ -43,7 +43,8 @@ Web portal:
 python3 ~/dashboard/portal.py
 ```
 
-Open `http://<pi-ip>:5000` from any device on your network. Find the Pi's IP with `hostname -I`.
+Open `http://<pi-ip>:5000` from any device on your network.
+Find the Pi's IP with `hostname -I`.
 
 Keys on the clock: `Esc`/`Q` quit, `F5` reload.
 
@@ -63,7 +64,7 @@ View logs:
 journalctl --user -u pi-dashboard -f
 ```
 
-> If the clock doesn't appear, the service may need your session's `DISPLAY` / `XAUTHORITY`. Alternatively, launch `dashboard.py` from your desktop autostart.
+> If the clock doesn't appear, the service may need your session's `DISPLAY` / `XAUTHORITY`; alternatively launch `dashboard.py` from your desktop autostart instead.
 
 ## Configuration
 
@@ -88,6 +89,8 @@ Files created at runtime (all git-ignored): `settings.json`, `reminders.json`, `
 
 ## Try it on a PC
 
+The display script is fixed at 800×480 but runs on any desktop with PyQt5:
+
 ```bash
 pip install PyQt5 Flask
 mkdir -p ./data && cp reminders.example.json data/reminders.json && cp routine.example.json data/routine.json
@@ -98,8 +101,8 @@ python3 dashboard.py
 
 ## ⚠️ Security
 
-The portal has **no login** and listens on all interfaces. Run it only on a trusted home network and never expose port 5000 to the internet. To restrict it to the Pi itself, set `PORTAL_HOST=127.0.0.1`.
+The portal has **no login** and listens on all interfaces. Run it only on a trusted home network, never expose port 5000 to the internet. To restrict it to the Pi itself (e.g. behind an SSH tunnel), set `PORTAL_HOST=127.0.0.1`.
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT – see [LICENSE](LICENSE).
